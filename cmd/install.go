@@ -6,7 +6,6 @@ package cmd
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +16,10 @@ var installCmd = &cobra.Command{
 	Long: `The install command will download the specified distro.
 			Use: wsldwnl install Debian`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("install called")
+		if args[0] == "arch" {
+			fmt.Println("arch install called")
+		}
+		
 	},
 }
 

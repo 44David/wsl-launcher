@@ -6,7 +6,7 @@ package cmd
 
 import (
 	"fmt"
-
+	
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +16,7 @@ var distrosCmd = &cobra.Command{
 	Short: "Display list of all available linux distros",
 	Long: `Display list of all available linux distros`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Debian")
+		fmt.Println(`Debian [Versions: (12.5 "bookworm")]`)
 		fmt.Println("Arch Linux")
 		fmt.Println("Ubuntu")
 		fmt.Println("Fedora")
@@ -28,8 +28,6 @@ var distrosCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(distrosCmd)
-
-	fmt.Println("Debian")
 
 	// Here you will define your flags and configuration settings.
 
