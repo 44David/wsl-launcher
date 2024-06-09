@@ -1,3 +1,3 @@
 # TO DO 
 
-- [ ] - Figure out how ot run .bat files using go
+- [ ] - Figure out how to run .bat files using go
