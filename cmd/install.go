@@ -7,6 +7,8 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
+	"os/exec"
+	"log"
 )
 
 // installCmd represents the install command
@@ -17,9 +19,29 @@ var installCmd = &cobra.Command{
 			Use: wsldwnl install Debian`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if args[0] == "arch" {
-			fmt.Println("arch install called")
-		}
-		
+			fmt.Println("Installing...")
+			archBatchFile := `bin\arch.bat`
+			execCommand := exec.Command(archBatchFile)
+			
+			output, err := execCommand.CombinedOutput()
+			if err != nil {
+				log.Fatal("Failed to execute batch file. Error: &v", err)
+			}
+
+			log.Printf("Output:\n %s", string(output))
+		} 
+		if args[0] == "debian" {
+			fmt.Println("Installing...")
+			debianBatchFile := `bin\debian.bat`
+			execCommand := exec.Command(debianBatchFile)
+			
+			output, err := execCommand.CombinedOutput()
+			if err != nil {
+				log.Fatal("Failed to execute batch file. Error: &v", err)
+			}
+
+			log.Printf("Output:\n %s", string(output))
+		}	
 	},
 }
 
