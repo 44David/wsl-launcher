@@ -36,10 +36,7 @@ var installCmd = &cobra.Command{
 			fmt.Print("Would you like to boot the system now? [Y/n]")
 			fmt.Scan(&response)
 
-			resUpper := strings.ToUpper(response)
-			if resUpper == "Y" {
-				
-			}
+
 
 		}
 
