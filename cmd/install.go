@@ -20,8 +20,11 @@ var installCmd = &cobra.Command{
 			Use: wsldwnl install Debian`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		if args[0] == "arch" {
+		if args[0] == "" {
 			fmt.Println("Installing...")
+
+
+			
 			archBatchFile := `bin\arch.bat`
 			execCommand := exec.Command(archBatchFile)
 			
@@ -35,9 +38,6 @@ var installCmd = &cobra.Command{
 			var response string
 			fmt.Print("Would you like to boot the system now? [Y/n]")
 			fmt.Scan(&response)
-
-
-
 		}
 
 		if args[0] == "debian" && args[1] == "dev" {	
