@@ -39,7 +39,7 @@ if [ $? -eq 0 ] && [ $OSTYPE == "linux-gnu"* ]
                 distro = $1
         fi
 
-        case $distro in 
+        case $distro in
             "debian") 
                 docker run -t debian bash ls /
                 dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
