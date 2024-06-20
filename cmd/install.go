@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -20,44 +19,20 @@ var installCmd = &cobra.Command{
 			Use: wsldwnl install Debian`,
 
 	Run: func(cmd *cobra.Command, args []string) {
-		if args[0] == "arch" {
+
+		if args[0] == "base" {
 			fmt.Println("Installing...")
-			archBatchFile := `bin\arch.bat`
-			execCommand := exec.Command(archBatchFile)
+			execShellScript := `bash scripts/get=base-distro.sh`
+
+			execCommand := exec.Command(execShellScript)
 
 			output, err := execCommand.CombinedOutput()
 			if err != nil {
-				log.Fatal("Failed to execute batch file. Error: &v", err)
+				log.Fatal("Failed to install " + args[1])
 			}
 
-			log.Printf("Output:\n %s", string(output))
+			log.Printf("Output: \n %s", string(output))
 
-			var response string
-			fmt.Print("Would you like to boot the system now? [Y/n]")
-			fmt.Scan(&response)
-
-		}
-
-		if args[0] == "debian" && args[1] == "dev" {
-			fmt.Println("Installing...")
-			execScript := `sh debian-create-targz.sh dev`
-			execCommand := exec.Command(execScript)
-
-			output, err := execCommand.CombinedOutput()
-			if err != nil {
-				log.Fatal("Failed to execute installation script. Error: &v", err)
-			}
-
-			log.Printf("Output:\n %s", string(output))
-
-			var response string
-			fmt.Print("Would you like to boot the system now? [Y/n]")
-			fmt.Scan(&response)
-			resUpper := strings.ToUpper(response)
-			if resUpper == "Y" {
-				bootScript := `sh boot-distro.sh`
-				exec.Command(bootScript)
-			}
 		}
 
 	},

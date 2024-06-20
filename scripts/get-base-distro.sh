@@ -44,12 +44,17 @@ if [ $? -eq 0 ] && [ $OSTYPE == "linux-gnu"* ]
                 docker run -t debian bash ls /
                 dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
                 docker export $dockerContainerID > /mnt/c/temp/debian.tar;;
-                # run boot-distro.sh 
+                bash ./boot-distro.sh docker
             "centos")
                 docker run -t centos bash ls /
                 dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/temp/centos.tar
-                # run boot-distro.sh 
+                docker export $dockerContainerID > /mnt/c/temp/centos.tar;;
+                bash ./boot-distro.sh docker
+            "ubuntu") 
+                docker run -t centos bash ls /
+                dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
+                docker export $dockerContainerID > /mnt/c/temp/ubuntu.tar;;
+                bash ./boot-distro.sh docker
             *) 
                 echo "an unexpected error occured"
 
