@@ -1,8 +1,13 @@
 
-# for now, assuming debian-based architecture 
+
+# # installs WSL if an error is thrown 
+
+# if [ wsl < "$0" ]
+#     then
+#         wsl --install
 
 
-if [ $OSTYPE == "linux-gnu"* ]
+if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
     then 
         sudo apt-get -y -q update
         sudo apt-get install ca-certificates curl gnupg cdebootstrap debian-arch-keyring tar
@@ -20,15 +25,14 @@ if [ $OSTYPE == "linux-gnu"* ]
 
         sudo docker run hello-world
 
-# mac os
-elif [ $OSTYPE == "darwin"* ]
-    then 
-        ech "Mac os"
 
 fi
 
-if [ $? -eq 0 ] && [ $OSTYPE == "linux-gnu"* ]
+if [ $? -eq 0 ]
     then 
+        # check Ubuntu name after installation
+        wsl -d Ubuntu
+        
         sudo service start docker
 
         if [ -z $1 ]
