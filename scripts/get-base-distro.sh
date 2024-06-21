@@ -2,10 +2,12 @@
 
 # # installs WSL if an error is thrown 
 
-# if [ wsl < "$0" ]
-#     then
-#         wsl --install
+if [ wsl < "$0" ]
+    then
+        wsl --install
+        wsl -d Ubuntu
 
+fi 
 
 if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
     then 
@@ -28,16 +30,16 @@ if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
 
 fi
 
+
+
 if [ $? -eq 0 ]
     then 
-        # check Ubuntu name after installation
-        wsl -d Ubuntu
-        
+
         sudo service start docker
 
         if [ -z $1 ]
             then 
-                echo "No arguments provided"
+                echo "No distribution found with given argument!"
         elif [ -n $1 ]
             then 
                 distro = $1
