@@ -43,8 +43,9 @@ var installCmd = &cobra.Command{
 				}
 	
 				log.Printf("Output: \n %s", string(output))
+				
 			case "CentOS":
-				execShellScript := `bash script/base-distro.sh centos`
+				execShellScript := `bash scripts/get-base-distro.sh centos`
 
 				execCommand := exec.Command(execShellScript)
 	

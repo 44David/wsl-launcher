@@ -2,14 +2,20 @@
 
 # # installs WSL if an error is thrown 
 
-if [ wsl < "$0" ]
-    then
-        wsl --install
-        wsl -d Ubuntu
+# if [ wsl < "$0" ]
+#     then
+#         wsl --install
+#         wsl -d Ubuntu-20.04
 
-fi 
+# fi 
 
-if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
+# wsl -d Debian
+
+bash 
+cd /mnt/c
+docker
+
+if [ $? -ne 0 ]
     then 
         sudo apt-get -y -q update
         sudo apt-get install ca-certificates curl gnupg cdebootstrap debian-arch-keyring tar
@@ -26,41 +32,34 @@ if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
         sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
         sudo docker run hello-world
-
-
 fi
 
 
-if [ $? -eq 0 ]
+
+if [ -z $1 ]
     then 
-    
-        sudo service docker start
+        echo "No distribution found with given argument!"
+elif [ -n $1 ]
+    then 
+        distro = $1
+fi
 
-        if [ -z $1 ]
-            then 
-                echo "No distribution found with given argument!"
-        elif [ -n $1 ]
-            then 
-                distro = $1
-        fi
-
-        case $distro in
-            "debian") 
-                docker run -t debian bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/temp/debian.tar;;
-                bash ./boot-distro.sh docker
-            "centos")
-                docker run -t centos bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/temp/centos.tar;;
-                bash ./boot-distro.sh docker
-            "archlinux") 
-                docker run -t centos bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/temp/ubuntu.tar;;
-                bash ./boot-distro.sh docker
-            *) 
-                echo "an unexpected error occured"
-
-
+case $1 in
+    "debian") 
+        docker run -t debian bash ls /
+        dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
+        docker export $dockerContainerID > /mnt/c/temp/debian.tar;;
+        # bash ./boot-distro.sh docker
+    "centos")
+        docker run -t centos bash ls /
+        dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
+        docker export $dockerContainerID > /mnt/c/temp/centos.tar;;
+        # bash ./boot-distro.sh docker
+    "archlinux") 
+        docker run -t centos bash ls /
+        dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
+        docker export $dockerContainerID > /mnt/c/temp/ubuntu.tar;;
+        # bash ./boot-distro.sh docker
+    *) 
+        echo "an unexpected error occured";;
+esac 
