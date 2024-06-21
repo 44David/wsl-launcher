@@ -31,11 +31,10 @@ if [ $OSTYPE == "linux-gnu"* ] && [ $? -eq 0 ]
 fi
 
 
-
 if [ $? -eq 0 ]
     then 
-
-        sudo service start docker
+    
+        sudo service docker start
 
         if [ -z $1 ]
             then 
@@ -56,7 +55,7 @@ if [ $? -eq 0 ]
                 dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
                 docker export $dockerContainerID > /mnt/c/temp/centos.tar;;
                 bash ./boot-distro.sh docker
-            "ubuntu") 
+            "archlinux") 
                 docker run -t centos bash ls /
                 dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
                 docker export $dockerContainerID > /mnt/c/temp/ubuntu.tar;;
