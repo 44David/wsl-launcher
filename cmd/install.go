@@ -5,7 +5,7 @@ package cmd
 
 import (
 	"fmt"
-	"log"
+	// "log"
 	"os/exec"
 
 	"github.com/manifoldco/promptui"
@@ -33,50 +33,42 @@ var installCmd = &cobra.Command{
 		}
 
 		switch result {
-			case "Debian":
-
-				execShellScript1 := `wsl -d Debian`
-				execShellScript2 := `sh script/base-distro.sh debian`
-
-				exec.Command(execShellScript1)
-				exec.Command(execShellScript2)
-
-				output, err := execCommand.CombinedOutput()
-				if err != nil {
-					log.Fatal("Failed to install " + result)
-				}
-
-				log.Printf("Output: \n %s", string(output))
-
-			case "CentOS":
-				execShellScript1 := `echo "hello"`
-				execShellScript2 := `cd scripts` 
-				execShellScript3 := `sh ./get-base-distro.sh centos`
-
-				exec.Command(execShellScript1)
-				exec.Command(execShellScript2)
-				exec.Command(execShellScript3)
-
-				output, err := execCommand.CombinedOutput()
-				if err != nil {
-					log.Fatal("Failed to install " + result)
-				}
-
-				log.Printf("Output: \n %s", string(output))
-
-			case "Alpine":
-				execShellScript := `bash scripts/get-base-distro.sh alpine`
-
-				execCommand := exec.Command(execShellScript)
-
-				output, err := execCommand.CombinedOutput()
-				if err != nil {
-					log.Fatal("Failed to install " + result)
-				}
-
-				log.Printf("Output: \n %s", string(output))
-
+		case "Debian":
+			debian_prompt := promptui.Select{
+				Label: "Select a version",
+				Items: []string{"Latest", "Bookworm:12", "Bullseye:11", "Buster:10"},
 			}
+
+			_, res, err := debian_prompt.Run()
+
+			if err != nil {
+				fmt.Printf("Execution Failed %v\n", err)
+				return 
+			}
+			
+			fmt.Println("Installing Debian " + res)
+
+			execShellScript1 := `wsl -d Debian`
+			execShellScript2 := `sh scripts/base-distro.sh debian`
+
+			exec.Command(execShellScript1)
+			exec.Command(execShellScript2)
+
+		case "CentOS":
+			execShellScript1 := `wsl -d Debian`
+			execShellScript2 := `sh scripts/get-base-distro.sh centos`
+
+			exec.Command(execShellScript1)
+			exec.Command(execShellScript2)
+
+		case "Alpine":
+			execShellScript1 := `wsl -d Debian`
+			execShellScript2 := `sh ./get-base-distro.sh alpine`
+
+			exec.Command(execShellScript1)
+			exec.Command(execShellScript2)
+
+		}
 
 	},
 }

@@ -7,7 +7,7 @@
 #         wsl --install
 # fi 
 
-# sudo service docker start
+
 
 # wsl -d Debian
 
@@ -43,18 +43,21 @@ elif [ -n $1 ]
         distro = $1
 fi
 
+
+sudo service docker start >/dev/null 2>&1
+
 case $1 in
     "debian") 
         docker run -t debian bash ls /
         dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/debian.tar;;
+        docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;
     "centos")
         docker run -t centos bash ls /
         dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
         docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/centos.tar;;
     "archlinux") 
         docker run -t centos bash ls /
-        dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/ubuntu.tar;;
+        dockerContainerID=$(docker container ls -a | grep -i archlinux | awk '{print $1}')
+        docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/archlinux.tar;;
 
 esac 
