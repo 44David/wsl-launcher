@@ -2,18 +2,18 @@
 
 # # installs WSL if an error is thrown 
 
-# if [ wsl < "$0" ]
+# if [ wsl --version < "$0" ]
 #     then
 #         wsl --install
-#         wsl -d Ubuntu-20.04
-
 # fi 
+
+# sudo service docker start
 
 # wsl -d Debian
 
-bash 
-cd /mnt/c
-docker
+# bash 
+docker >/dev/null 2>&1
+
 
 if [ $? -ne 0 ]
     then 
@@ -35,7 +35,6 @@ if [ $? -ne 0 ]
 fi
 
 
-
 if [ -z $1 ]
     then 
         echo "No distribution found with given argument!"
@@ -48,18 +47,14 @@ case $1 in
     "debian") 
         docker run -t debian bash ls /
         dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/temp/debian.tar;;
-        # bash ./boot-distro.sh docker
+        docker export $dockerContainerID > /mnt/c/debian.tar;;
     "centos")
         docker run -t centos bash ls /
         dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/temp/centos.tar;;
-        # bash ./boot-distro.sh docker
+        docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/centos.tar;;
     "archlinux") 
         docker run -t centos bash ls /
         dockerContainerID=$(docker container ls -a | grep -i ubuntu | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/temp/ubuntu.tar;;
-        # bash ./boot-distro.sh docker
-    *) 
-        echo "an unexpected error occured";;
+        docker export $dockerContainerID > /mnt/c/ubuntu.tar;;
+
 esac 

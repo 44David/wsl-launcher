@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )
@@ -21,42 +22,61 @@ var installCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		prompt := promptui.Select{
 			Label: "Select a distribution",
-			Items: []string{"Debian", "CentOS", "Arch Linux"},
+			Items: []string{"Debian", "CentOS", "Arch Linux", "Alpine Linux", "Fedora Linux"},
 		}
 
 		_, result, err := prompt.Run()
 
 		if err != nil {
 			fmt.Printf("Execution Failed with error %v\n", err)
-			return 
+			return
 		}
 
 		switch result {
 			case "Debian":
-				execShellScript := `bash script/base-distro.sh debian`
 
-				execCommand := exec.Command(execShellScript)
-	
+				execShellScript1 := `wsl -d Debian`
+				execShellScript2 := `sh script/base-distro.sh debian`
+
+				exec.Command(execShellScript1)
+				exec.Command(execShellScript2)
+
 				output, err := execCommand.CombinedOutput()
 				if err != nil {
 					log.Fatal("Failed to install " + result)
 				}
-	
+
 				log.Printf("Output: \n %s", string(output))
-				
+
 			case "CentOS":
-				execShellScript := `bash scripts/get-base-distro.sh centos`
+				execShellScript1 := `echo "hello"`
+				execShellScript2 := `cd scripts` 
+				execShellScript3 := `sh ./get-base-distro.sh centos`
 
-				execCommand := exec.Command(execShellScript)
-	
+				exec.Command(execShellScript1)
+				exec.Command(execShellScript2)
+				exec.Command(execShellScript3)
+
 				output, err := execCommand.CombinedOutput()
 				if err != nil {
 					log.Fatal("Failed to install " + result)
 				}
-	
+
 				log.Printf("Output: \n %s", string(output))
 
-		}
+			case "Alpine":
+				execShellScript := `bash scripts/get-base-distro.sh alpine`
+
+				execCommand := exec.Command(execShellScript)
+
+				output, err := execCommand.CombinedOutput()
+				if err != nil {
+					log.Fatal("Failed to install " + result)
+				}
+
+				log.Printf("Output: \n %s", string(output))
+
+			}
 
 	},
 }
