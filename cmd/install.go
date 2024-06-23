@@ -22,7 +22,7 @@ var installCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		prompt := promptui.Select{
 			Label: "Select a distribution",
-			Items: []string{"Debian", "CentOS", "Arch Linux", "Alpine Linux", "Fedora Linux"},
+			Items: []string{"Debian", "CentOS", "Arch Linux (Work in Progress)", "Alpine Linux", "Fedora Linux"},
 		}
 
 		_, result, err := prompt.Run()
@@ -43,26 +43,50 @@ var installCmd = &cobra.Command{
 
 			if err != nil {
 				fmt.Printf("Execution Failed %v\n", err)
-				return 
+				return
 			}
-			
+
 			fmt.Println("Installing Debian " + res)
 
-			execShellScript1 := `wsl -d Debian`
-			execShellScript2 := `sh scripts/base-distro.sh debian`
+			switch res {
+				case "Latest":
 
-			exec.Command(execShellScript1)
-			exec.Command(execShellScript2)
+					execShellScript1 := `wsl`
+					execShellScript2 := `sh scripts/base-distro.sh debian latest`
+
+					exec.Command(execShellScript1)
+					exec.Command(execShellScript2)
+
+				case "Bookworm:12":
+					execShellScript1 := `wsl`
+					execShellScript2 := `sh scripts/base-distro.sh debian 12`
+
+					exec.Command(execShellScript1)
+					exec.Command(execShellScript2)
+				case "Bullseye:11":
+					execShellScript1 := `wsl`
+					execShellScript2 := `sh scripts/base-distro.sh debian 11`
+
+					exec.Command(execShellScript1)
+					exec.Command(execShellScript2)
+
+				case "Buster:10":
+					execShellScript1 := `wsl`
+					execShellScript2 := `sh scripts/base-distro.sh debian 10`
+
+					exec.Command(execShellScript1)
+					exec.Command(execShellScript2)
+			}
 
 		case "CentOS":
-			execShellScript1 := `wsl -d Debian`
+			execShellScript1 := `wsl`
 			execShellScript2 := `sh scripts/get-base-distro.sh centos`
 
 			exec.Command(execShellScript1)
 			exec.Command(execShellScript2)
 
 		case "Alpine":
-			execShellScript1 := `wsl -d Debian`
+			execShellScript1 := `wsl`
 			execShellScript2 := `sh ./get-base-distro.sh alpine`
 
 			exec.Command(execShellScript1)
