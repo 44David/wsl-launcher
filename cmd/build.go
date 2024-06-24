@@ -5,6 +5,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
 )
@@ -15,7 +16,14 @@ var buildCmd = &cobra.Command{
 	Short: "Usage: wsldwnl build [NAME] [INSTALL.TAR.GZ]",
 	Long:  `Used to build a custom distro using a rootfs tarball.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("build called")
+
+		if len(args) < 1 {
+			fmt.Printf("Please provide the directory to a your tarball\n")
+			fmt.Printf(`Usage: wsldwnl build [NAME] ["PATH/TO/DISTRO.TAR.GZ"]`)
+			log.Fatal()
+		}
+
+		
 	},
 }
 
