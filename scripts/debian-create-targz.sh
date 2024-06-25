@@ -8,7 +8,7 @@ sudo apt-get -y -q install curl gnupg cdebootstrap debian-archive-keyring tar
 
 #create target directory
 sudo mkdir -p ~/debian-installer
-cd ~/debian-installer
+cd ~/debian-installer   
 
 # create a bootstrap of ISO
 
