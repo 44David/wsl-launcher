@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ACERLAPTOPD</Machine>
+    <WindowsUser>David</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>WSL-DistroLauncher</PackageIdentityName>
+    <PackageIdentityPublisher>CN=David</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\x64\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\x64\Debug\DistroLauncher-Appx\AppX</LayoutDir>
+    <RegisteredManifestChecksum>FFD771B3CF28ACC4BBCD67C20EBC08B72FFC69DC2B7571F8E5D16D84663D66BF</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>WSL-DistroLauncher_1.0.0.0_x64__ywwvhtjmx9rt8</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>WSL-DistroLauncher_ywwvhtjmx9rt8!mydistro</RegisteredUserModeAppID>
+    <RegisteredPackageID>WSL-DistroLauncher</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=David</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\x64\Debug\DistroLauncher-Appx\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:59:02.446</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\x64\Debug\DistroLauncher-Appx\mydistro.exe">
+      <PackagePath>mydistro.exe</PackagePath>
+      <Modified>2024-06-25T17:03:27.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.905</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.907</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.907</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.908</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.908</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.908</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.910</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.911</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.911</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.912</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.913</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.913</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.914</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.915</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.916</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.916</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.917</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.917</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.918</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.918</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.919</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.919</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.922</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.922</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.923</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.923</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.924</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.924</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.924</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.925</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.926</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.926</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.927</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.928</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.928</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.929</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.929</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.930</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\DistroLauncher-Appx\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-06-25T16:56:23.931</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\x64\install.tar.gz">
+      <PackagePath>install.tar.gz</PackagePath>
+      <Modified>2024-06-25T16:41:47.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\David\OneDrive\Desktop\wsldl-clone\WSL-DistroLauncher\x64\Debug\DistroLauncher-Appx\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2024-06-25T16:59:02.318</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
