@@ -28,7 +28,8 @@ var buildCmd = &cobra.Command{
 		distro_name := args[0]
 		file := args[1]
 		destination_folder := args[2]
-
+		
+		// command := distro-builder/build-custom.sh distro_name, file, destination_folder
 
 		if filepath.Ext(file) == ".gz" {
 			exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)

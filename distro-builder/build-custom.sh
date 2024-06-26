@@ -2,8 +2,7 @@ instance=$1
 targz=$2
 folder=$3
 
-
-if [ "wsl -v" < "$0" ]
+if [ $? -ne 0 ]
     then 
         echo "You do not have WSL installed. Would you like to install and continue with installation? [Y/n]"
 
@@ -24,4 +23,3 @@ wsl --import "$instance" "$path" "$targz"
 if [ $? -eq 0 ]
     then 
         echo "Successfully built instance. Run wsl -d "$instance" "
-
