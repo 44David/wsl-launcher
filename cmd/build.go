@@ -21,7 +21,7 @@ var buildCmd = &cobra.Command{
 
 		if len(args) < 1 {
 			fmt.Printf("Please provide the directory to a your tarball\n")
-			fmt.Printf(`Usage: wsldwnl build [NAME] ["PATH/TO/DISTRO.TAR.GZ"]`)
+			fmt.Printf(`Usage: wsldwnl build [INSTANCE NAME] ["DISTRO.TAR.GZ"] [DESTINATION FOLDER NAME]`)
 			log.Fatal()
 		}
 
@@ -32,6 +32,9 @@ var buildCmd = &cobra.Command{
 
 		if filepath.Ext(file) == ".gz" {
 			exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
+		} else {
+			fmt.Printf("Please provide a valid rootfs tar.gz distro.")
+			
 		}
 
 	},
