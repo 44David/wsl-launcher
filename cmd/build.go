@@ -6,6 +6,7 @@ package cmd
 import (
 	"fmt"
 	"log"
+	"io/fs"
 
 	"github.com/spf13/cobra"
 )
@@ -22,10 +23,21 @@ var buildCmd = &cobra.Command{
 			fmt.Printf(`Usage: wsldwnl build [NAME] ["PATH/TO/DISTRO.TAR.GZ"]`)
 			log.Fatal()
 		}
+		
+		distro_name := args[0]
+		file := args[1]
+
+		cmd := exec.Command("/bin/sh", "scripts/")
+
+
+
 
 		
 	},
 }
+
+
+
 
 func init() {
 	rootCmd.AddCommand(buildCmd)
