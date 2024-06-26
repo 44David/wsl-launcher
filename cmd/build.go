@@ -6,7 +6,8 @@ package cmd
 import (
 	"fmt"
 	"log"
-	"io/fs"
+	"os/exec"
+	"path/filepath"
 
 	"github.com/spf13/cobra"
 )
@@ -23,21 +24,18 @@ var buildCmd = &cobra.Command{
 			fmt.Printf(`Usage: wsldwnl build [NAME] ["PATH/TO/DISTRO.TAR.GZ"]`)
 			log.Fatal()
 		}
-		
+
 		distro_name := args[0]
 		file := args[1]
-
-		cmd := exec.Command("/bin/sh", "scripts/")
-
+		destination_folder := args[2]
 
 
+		if filepath.Ext(file) == ".gz" {
+			exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
+		}
 
-		
 	},
 }
-
-
-
 
 func init() {
 	rootCmd.AddCommand(buildCmd)
