@@ -41,6 +41,8 @@ var buildCmd = &cobra.Command{
 				// create docker container 
 				// export container to a .tar file
 				// import into WSL
+			case ".tar":
+				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
 			default: 
 				fmt.Printf("Sorry, could not read file. Are you sure it's an accepted file type?")
 		}
