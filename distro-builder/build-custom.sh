@@ -8,7 +8,7 @@ if [ $? -ne 0 ]
 
         read varanswer 
 
-        if [ $varanswer == "Y" ] || [ $varanswer == "n" ]
+        if [ $varanswer == "Y" ] || [ $varanswer == "y" ]
             then 
                 wsl --install 
         else

@@ -31,12 +31,20 @@ var buildCmd = &cobra.Command{
 		
 		// command := distro-builder/build-custom.sh distro_name, file, destination_folder
 
-		if filepath.Ext(file) == ".gz" {
-			exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
-		} else {
-			fmt.Printf("Please provide a valid rootfs tar.gz distro.")
-			
+		switch filepath.Ext(file) {
+			case ".gz": 
+				exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
+			case ".vhdx":
+				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
+			case ".iso":
+				// to do 
+				// create docker container 
+				// export container to a .tar file
+				// import into WSL
+			default: 
+				fmt.Printf("Sorry, could not read file. Are you sure it's an accepted file type?")
 		}
+		
 
 	},
 }

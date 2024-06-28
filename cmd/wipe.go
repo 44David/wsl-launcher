@@ -13,13 +13,9 @@ import (
 // wipeCmd represents the wipe command
 var wipeCmd = &cobra.Command{
 	Use:   "wipe",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Deletes a registered WSL instance",
+	Long: `Unregister a WSL instance given the name of a valid and currently installed instance.
+		   Usage: wsldwnl wipe Ubuntu-20.04 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("wipe called")
 	},
