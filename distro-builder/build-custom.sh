@@ -21,6 +21,8 @@ if [ $? -ne 0 ]
 fi         
 
 
+if [  ]
+
 if [ -z "$3" ]
     then 
         echo "Would you like us to automatically create a storage folder? [Y\n]"
@@ -38,7 +40,7 @@ if [ -z "$3" ]
             exit 1 
         fi
 fi
-
+    
 if [ $? -eq 0 ]
     then 
         echo "Successfully built instance. Run wsl -d "$instance" "

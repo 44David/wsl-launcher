@@ -38,6 +38,7 @@ var buildCmd = &cobra.Command{
 			case ".vhdx":
 				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
 			case ".iso":
+				
 				// to do 
 				// create docker container 
 				// export container to a .tar file
