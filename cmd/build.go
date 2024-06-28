@@ -40,7 +40,7 @@ var buildCmd = &cobra.Command{
 			case ".iso":
 				
 				// to do 
-				// create docker container 
+				// create docker container 	
 				// export container to a .tar file
 				// import into WSL
 			case ".tar":

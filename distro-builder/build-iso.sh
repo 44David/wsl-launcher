@@ -8,12 +8,20 @@ docker
 if [ $? -ne 0 ] 
     then 
         echo "You do not have docker installed, please install it." 
+fi
 
-# containerize .ISO in order to properly compress it for WSL 
-docker container create -i -t --name "$instance" alpine 
- 
-docker container export "$instance" > "$instance".tar 
 
-mkdir -p "$dir" 
- 
-docker 
+cat <<EOF > Dockerfile
+FROM scratch 
+COPY "$isofile"
+RUN mkdir "$instance"-container 
+
+EOF
+
+docker build -t "$instance"-container .
+
+docker run name "$instance" "$instance"-container
+
+docker export "$instance" -o "$instance".tar
+
+wsl --import 
