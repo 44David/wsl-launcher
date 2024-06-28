@@ -1,10 +1,5 @@
-
 instance=$1 
 file=$2
-folder=$3
-
-
-
 
 if [ $? -ne 0 ]
     then 
@@ -21,28 +16,17 @@ if [ $? -ne 0 ]
 fi         
 
 
-if [  ]
 
-if [ -z "$3" ]
-    then 
-        echo "Would you like us to automatically create a storage folder? [Y\n]"
 
-        read makefolder
+mkdir -p "$instance"-vhdx-storage
 
-        if [ $makefolder == "Y" ] || [ $makefolder == "y" ]
-            then 
+echo "Building... (This may take several minutes)"
 
-            mkdir -p "$folder"
+wsl --import "$instance" "$path" "$file"
 
-            wsl --import "$instance" "$path" "$file"
-        else
-            echo "Please specify installation folder"
-            exit 1 
-        fi
-fi
+
     
 if [ $? -eq 0 ]
     then 
-        echo "Successfully built instance. Run wsl -d "$instance" "
-
+        echo "Successfully built instance. Run wsl -d "$instance" to launch."
 fi 

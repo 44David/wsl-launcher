@@ -10,13 +10,14 @@ if [ $? -ne 0 ]
         echo "You do not have docker installed, please install it." 
 fi
 
+mkdir "$instance"-vhdx-storage
 
 cat <<EOF > Dockerfile
 FROM scratch 
 COPY "$isofile"
-RUN mkdir "$instance"-container 
-
 EOF
+
+echo "Building... (This may take several minutes)"
 
 docker build -t "$instance"-container .
 

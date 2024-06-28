@@ -21,20 +21,19 @@ var buildCmd = &cobra.Command{
 
 		if len(args) < 1 {
 			fmt.Printf("Please provide the directory to a your tarball\n")
-			fmt.Printf(`Usage: wsldwnl build [INSTANCE NAME] ["DISTRO.TAR.GZ"] [DESTINATION FOLDER NAME]`)
+			fmt.Printf(`Usage: wsldwnl build [INSTANCE NAME] ["DISTRO.TAR.GZ"]`)
 			log.Fatal()
 		}
 
 		distro_name := args[0]
 		file := args[1]
-		destination_folder := args[2]
 		
 		// command := distro-builder/build-custom.sh distro_name, file, destination_folder
 
 		switch filepath.Ext(file) {
 			case ".gz": 
 				// use destination_folder because we need a directory to unzip the folder beforehand 
-				exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
+				exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file)
 			case ".vhdx":
 				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
 			case ".iso":
