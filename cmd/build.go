@@ -33,6 +33,7 @@ var buildCmd = &cobra.Command{
 
 		switch filepath.Ext(file) {
 			case ".gz": 
+				// use destination_folder because we need a directory to unzip the folder beforehand 
 				exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file, destination_folder)
 			case ".vhdx":
 				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)

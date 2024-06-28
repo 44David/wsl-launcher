@@ -1,6 +1,10 @@
+
 instance=$1 
-targz=$2
+file=$2
 folder=$3
+
+
+
 
 if [ $? -ne 0 ]
     then 
@@ -16,10 +20,27 @@ if [ $? -ne 0 ]
         fi 
 fi         
 
-mkdir -p "$folder"
 
-wsl --import "$instance" "$path" "$targz"
+if [ -z "$3" ]
+    then 
+        echo "Would you like us to automatically create a storage folder? [Y\n]"
+
+        read makefolder
+
+        if [ $makefolder == "Y" ] || [ $makefolder == "y" ]
+            then 
+
+            mkdir -p "$folder"
+
+            wsl --import "$instance" "$path" "$file"
+        else
+            echo "Please specify installation folder"
+            exit 1 
+        fi
+fi
 
 if [ $? -eq 0 ]
     then 
         echo "Successfully built instance. Run wsl -d "$instance" "
+
+fi 
