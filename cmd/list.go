@@ -6,7 +6,8 @@ package cmd
 import (
 	"fmt"
 	"os/exec"
-
+	// "bytes"
+	"strings"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )
@@ -14,21 +15,46 @@ import (
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Short message here",
-	Long: `Long message here`,
+	Short: "Manage installed distros",
+	Long: `Delete, edit or view all installed WSL2 instances.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd := exec.Command("wsl", "-l")
-		
-		out, err := cmd.Run()
+
+		out, err := exec.Command("wsl", "-l").Output()
+
 		if err != nil {
-			fmt.Println("Could not execute command. ", err)
+			fmt.Printf("Sorry, an error occured. %v\n", err)
+			return 
 		}
-		installed_distros := string(out)
+
+		outString := string(out)
+
+		lines := strings.Split(outString, "\r\n")
+		
+		var installed_distros []string
+		for _, line := range lines {
+			if line != "" {
+				fmt.Println(line)
+				installed_distros = append(installed_distros, line)
+			}
+		}
+
+		fmt.Println(installed_distros)
+
 
 		prompt := promptui.Select{
-			Label: "Installed WSL Instances:",
+			Label: "Installed WSL Instances",
 			Items: installed_distros,
 		}
+
+		_, result, err := prompt.Run()
+
+		if err != nil {
+			fmt.Printf("Execution Failed with error %v\n", err)
+			return
+		}
+
+		println(result)
+		
 
 	},
 }
