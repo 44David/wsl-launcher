@@ -12,6 +12,11 @@
 # wsl -d Debian
 
 # bash 
+
+
+
+
+
 docker >/dev/null 2>&1
 
 
@@ -38,29 +43,17 @@ fi
 if [ -z $1 ]
     then 
         echo "No distribution found with given argument!"
+fi
+
 
 sudo service docker start >/dev/null 2>&1
 
-case $1 in
-    "debian") 
-        case $2 in 
-            "latest")
-                docker run -t debian bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;
-            "12")
-                docker run -t debian:12 bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;
-            "11")
-                docker run -t debian:11 bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;
-            "10")
-                docker run -t debian:10 bash ls /
-                dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
-                docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;
-                
+case "$1" in
+    "Debian") 
+        echo "Installing Debian"
+        docker run -t debian bash ls /
+        dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
+        docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/debian.tar;;              
     "centos")
         docker run -t centos bash ls /
         dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')

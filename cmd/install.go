@@ -5,9 +5,8 @@ package cmd
 
 import (
 	"fmt"
-	// "log"
+	"log"
 	"os/exec"
-
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )
@@ -32,67 +31,14 @@ var installCmd = &cobra.Command{
 			return
 		}
 
-		switch result {
-		case "Debian":
-			debian_prompt := promptui.Select{
-				Label: "Select a version",
-				Items: []string{"Latest", "Bookworm:12", "Bullseye:11", "Buster:10"},
-			}
-
-			_, res, err := debian_prompt.Run()
-
-			if err != nil {
-				fmt.Printf("Execution Failed %v\n", err)
-				return
-			}
-
-			fmt.Println("Installing Debian " + res)
-
-			switch res {
-				case "Latest":
-
-					execShellScript1 := `wsl`
-					execShellScript2 := `sh scripts/base-distro.sh debian latest`
-
-					exec.Command(execShellScript1)
-					exec.Command(execShellScript2)
-
-				case "Bookworm:12":
-					execShellScript1 := `wsl`
-					execShellScript2 := `sh scripts/base-distro.sh debian 12`
-
-					exec.Command(execShellScript1)
-					exec.Command(execShellScript2)
-				case "Bullseye:11":
-					execShellScript1 := `wsl`
-					execShellScript2 := `sh scripts/base-distro.sh debian 11`
-
-					exec.Command(execShellScript1)
-					exec.Command(execShellScript2)
-
-				case "Buster:10":
-					execShellScript1 := `wsl`
-					execShellScript2 := `sh scripts/base-distro.sh debian 10`
-
-					exec.Command(execShellScript1)
-					exec.Command(execShellScript2)
-			}
-
-		case "CentOS":
-			execShellScript1 := `wsl`
-			execShellScript2 := `sh scripts/get-base-distro.sh centos`
-
-			exec.Command(execShellScript1)
-			exec.Command(execShellScript2)
-
-		case "Alpine":
-			execShellScript1 := `wsl`
-			execShellScript2 := `sh ./get-base-distro.sh alpine`
-
-			exec.Command(execShellScript1)
-			exec.Command(execShellScript2)
-
+		command := exec.Command("bash scripts/get-base-distro.sh", result)
+		run := command.Run()
+		
+		if run != nil {
+			fmt.Printf("An error occurred when installing.\n")
+			log.Fatal(run)
 		}
+
 
 	},
 }
