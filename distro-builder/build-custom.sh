@@ -1,6 +1,8 @@
 instance=$1 
 file=$2
 
+
+
 if [ $? -ne 0 ]
     then 
         echo "You do not have WSL installed. Would you like to install and continue with installation? [Y/n]"

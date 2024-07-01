@@ -29,14 +29,14 @@ var buildCmd = &cobra.Command{
 		file := args[1]
 
 		switch filepath.Ext(file) {
-			case ".gz", ".vhdx", ".tar": 
-				cmd := exec.Command("wsl", "bash", "-c", "/distro-builder/build-custom.sh", distro_name, file)
+			case ".gz", ".vhdx", ".tar", ".7z": 
+				cmd := exec.Command("wsl", "bash", "/distro-builder/build-custom.sh", distro_name, file)
 				err := cmd.Run() 
 				if err != nil {
 					log.Fatal(err)
-				}
+				}	
 			case ".iso":
-				cmd := exec.Command("wsl", "bash", "-c", "/distro-builder/build-iso.sh", distro_name, file)
+				cmd := exec.Command("wsl", "bash", "/distro-builder/build-iso.sh", distro_name, file)
 				err := cmd.Run() 
 				if err != nil {
 					log.Fatal(err)

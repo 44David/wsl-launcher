@@ -31,6 +31,9 @@ var installCmd = &cobra.Command{
 			return
 		}
 
+		if result == "Arch Linux" {
+			fmt.Println("Installed arch")
+		}
 		command := exec.Command("bash scripts/get-base-distro.sh", result)
 		run := command.Run()
 		

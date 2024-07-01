@@ -1,22 +1,3 @@
-
-
-# # installs WSL if an error is thrown 
-
-# if [ wsl --version < "$0" ]
-#     then
-#         wsl --install
-# fi 
-
-
-
-# wsl -d Debian
-
-# bash 
-
-
-
-
-
 docker >/dev/null 2>&1
 
 
@@ -40,16 +21,10 @@ if [ $? -ne 0 ]
 fi
 
 
-if [ -z $1 ]
-    then 
-        echo "No distribution found with given argument!"
-fi
-
-
 sudo service docker start >/dev/null 2>&1
 
 case "$1" in
-    "Debian") 
+    "Debian")  
         echo "Installing Debian"
         docker run -t debian bash ls /
         dockerContainerID=$(docker container ls -a | grep -i debian | awk '{print $1}')
@@ -59,8 +34,12 @@ case "$1" in
         dockerContainerID=$(docker container ls -a | grep -i centos | awk '{print $1}')
         docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/centos.tar;;
     "archlinux") 
-        docker run -t centos bash ls /
-        dockerContainerID=$(docker container ls -a | grep -i archlinux | awk '{print $1}')
-        docker export $dockerContainerID > /mnt/c/Users/David/Onedrive/Desktop/archlinux.tar;;
+        if "scoop update"; then 
+            scoop bucket add extras 
+            scoop install archwsl 
+        else
+            "./install-scoop.ps1"
+            scoop bucket add extras 
+            scoop install archwsl 
 
 esac 
