@@ -15,16 +15,11 @@ if [ $? -ne 0 ]
         fi 
 fi         
 
-
-
-
 mkdir -p "$instance"-vhdx-storage
 
 echo "Building... (This may take several minutes)"
 
 wsl --import "$instance" "$path" "$file"
-
-
     
 if [ $? -eq 0 ]
     then 

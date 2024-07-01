@@ -20,30 +20,27 @@ var buildCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 
 		if len(args) < 1 {
-			fmt.Printf("Please provide the directory to a your tarball\n")
+			fmt.Printf("Please provide the installation medium.\n")
 			fmt.Printf(`Usage: wsldwnl build [INSTANCE NAME] ["DISTRO.TAR.GZ"]`)
 			log.Fatal()
 		}
 
 		distro_name := args[0]
 		file := args[1]
-		
-		// command := distro-builder/build-custom.sh distro_name, file, destination_folder
 
 		switch filepath.Ext(file) {
-			case ".gz": 
-				// use destination_folder because we need a directory to unzip the folder beforehand 
-				exec.Command("bash distro-builder/build-custom.sh %v %v %v", distro_name, file)
-			case ".vhdx":
-				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
+			case ".gz", ".vhdx", ".tar": 
+				cmd := exec.Command("wsl", "bash", "-c", "/distro-builder/build-custom.sh", distro_name, file)
+				err := cmd.Run() 
+				if err != nil {
+					log.Fatal(err)
+				}
 			case ".iso":
-				
-				// to do 
-				// create docker container 	
-				// export container to a .tar file
-				// import into WSL
-			case ".tar":
-				exec.Command("bash distro-builder/build-custom.sh %v %v", distro_name, file)
+				cmd := exec.Command("wsl", "bash", "-c", "/distro-builder/build-iso.sh", distro_name, file)
+				err := cmd.Run() 
+				if err != nil {
+					log.Fatal(err)
+				}
 			default: 
 				fmt.Printf("Sorry, could not read file. Are you sure it's an accepted file type?")
 		}

@@ -24,26 +24,28 @@ var listCmd = &cobra.Command{
 		if err != nil {
 			fmt.Printf("Sorry, an error occured. %v\n", err)
 			return 
-		}
+		}	
 
 		outString := string(out)
 
-		lines := strings.Split(outString, "\r\n")
-		
-		var installed_distros []string
-		for _, line := range lines {
-			if line != "" {
-				fmt.Println(line)
-				installed_distros = append(installed_distros, line)
-			}
-		}
+		// fmt.Println([]string{outString})
 
-		fmt.Println(installed_distros)
+		lines := strings.Split(outString, "\r\n")
+
+		// var installed_distros []string
+		// for _, line := range lines {
+		// 	if line != "" {
+		// 		fmt.Println(line)
+		// 		installed_distros = append(installed_distros, line)
+		// 	}
+		// }
+
+		// fmt.Println(installed_distros)
 
 
 		prompt := promptui.Select{
 			Label: "Installed WSL Instances",
-			Items: installed_distros,
+			Items: lines,
 		}
 
 		_, result, err := prompt.Run()

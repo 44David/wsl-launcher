@@ -1,9 +1,9 @@
 instance=$1 
 isofile=$2 
-dir=$3 
- 
- 
-docker 
+  
+docker >/dev/null 2>&1
+
+sudo service docker start >/dev/null 2>&1
  
 if [ $? -ne 0 ] 
     then 
@@ -24,5 +24,3 @@ docker build -t "$instance"-container .
 docker run name "$instance" "$instance"-container
 
 docker export "$instance" -o "$instance".tar
-
-wsl --import 
